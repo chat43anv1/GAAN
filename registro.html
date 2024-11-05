@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="icon" href="images/Logo.png">
+<link rel="stylesheet" href="assets/css/registro.css">
+
+<title>Registro de Mascotas</title>
+</head>
+<body>
+
+    <header>
+        <nav class="nav">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="iniciarsesion.html"><i class="fas fa-user"></i> Iniciar sesión</a>
+            <a href="nosotros.html"><i class="fas fa-info-circle"></i> Nosotros</a>
+            <a href="servicios.html"><i class="fas fa-dog"></i> Servicios</a>
+            <a href="registro.html"><i class="fas fa-pencil-alt"></i> Registro</a>
+            <a href="adopcion.html"><i class="fas fa-paw"></i> Adopción</a>
+        </nav>    
+    </header>
+
+    <div class="formulario">
+        <h2>Registro de Mascotas</h2>
+        <form id="formulario" onsubmit="return guardarInformacion(event);">
+            <label for="nombreMascota">Nombre de la mascota:</label>
+            <input type="text" id="nombreMascota" name="nombreMascota" required><br><br>
+
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" name="peso" required><br><br>
+
+            <label for="edad">Edad:</label>
+            <input type="text" id="edad" name="edad" required><br><br>
+
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required><br><br>
+
+            <label for="enfermedad">¿Tiene alguna Enfermedad? </label>
+            <select id="enfermedad" name="enfermedad" onchange="mostrarEnfermedad(this.value)">
+                <option value="No">No</option>
+                <option value="Si">Si</option>
+            </select><br><br>
+
+            <div id="divEnfermedad" style="display: none;">
+                <label for="detalleEnfermedad">Detalle de la enfermedad:</label>
+                <textarea id="detalleEnfermedad" name="detalleEnfermedad"></textarea><br><br>
+            </div>
+
+            <label for="nombreDueno">Nombre del dueño:</label>
+            <input type="text" id="nombreDueno" name="nombreDueno" required><br><br>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required><br><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required><br><br>
+
+            <label for="comentario">Comentario adicional:</label>
+            <textarea id="comentario" name="comentario"></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="registroExitoso" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Registro exitoso</p>
+        </div>
+    </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61557778079210&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/GaAn21944762640?t=Rpb8wFjxilFiarmFjPewfA&s=08"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/gaan1920"><i class="fab fa-instagram"></i></a>
+            <p>&copy; G.A.A.N </a></p>
+        </div>
+    <script src="assets/js/registro.js"></script>
+</body>
+</html>

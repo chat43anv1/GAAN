@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>CRUD</title>
+<link rel="stylesheet" href="assets/css/crud.css">
+</head>
+<body>
+<div class="container">
+    <a href="javascript:history.go(-1)" class="back-link">&#8592; Volver</a>
+    <link rel="icon" href="images/Logo.png">
+    <h1>CRUD LOGIN</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            <tr>
+                <td>Usuario1</td>
+                <td>Contraseña1</td>
+                <td>
+                    <button class="edit" onclick="editUser(0)">Editar</button>
+                    <button class="delete" onclick="deleteUser(0)">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Usuario2</td>
+                <td>Contraseña2</td>
+                <td>
+                    <button class="edit" onclick="editUser(1)">Editar</button>
+                    <button class="delete" onclick="deleteUser(1)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form id="userForm">
+        <label for="newUsername">Nuevo Usuario:</label>
+        <input type="text" id="newUsername" required>
+        <label for="newPassword">Nueva Contraseña:</label>
+        <input type="password" id="newPassword" required>
+        <button type="submit">Crear</button>
+    </form>
+</div>
+
+<script src="assets/js/crud.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+[debug] [2024-03-28T09:23:25.543Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T09:23:25.548Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-28T09:23:25.549Z] CLI Version:   13.6.0
+[debug] [2024-03-28T09:23:25.549Z] Platform:      win32
+[debug] [2024-03-28T09:23:25.550Z] Node Version:  v20.11.0
+[debug] [2024-03-28T09:23:25.550Z] Time:          Thu Mar 28 2024 03:23:25 GMT-0600 (hora estándar central)
+[debug] [2024-03-28T09:23:25.550Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T09:23:25.667Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T09:23:25.668Z] > authorizing via signed-in user (gaan1920@gmail.com)
+[debug] [2024-03-28T09:23:25.669Z] [iam] checking project gaannusa for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-28T09:23:25.672Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gaannusa:testIamPermissions [none]
+[debug] [2024-03-28T09:23:25.672Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gaannusa:testIamPermissions x-goog-quota-user=projects/gaannusa
+[debug] [2024-03-28T09:23:25.673Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gaannusa:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T09:23:26.402Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gaannusa:testIamPermissions 200
+[debug] [2024-03-28T09:23:26.403Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gaannusa:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T09:23:26.404Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gaannusa [none]
+[debug] [2024-03-28T09:23:26.701Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gaannusa 200
+[debug] [2024-03-28T09:23:26.701Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gaannusa {"projectId":"gaannusa","projectNumber":"489251140923","displayName":"GAANNUSA","name":"projects/gaannusa","resources":{"hostingSite":"gaannusa"},"state":"ACTIVE","etag":"1_4118ddbb-ae98-4046-9277-cb50b692ebe2"}
+[info] 
+[info] === Deploying to 'gaannusa'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2024-03-28T09:23:26.724Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/gaannusa:test [none]
+[debug] [2024-03-28T09:23:26.724Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/gaannusa:test [omitted]
+[debug] [2024-03-28T09:23:27.312Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/gaannusa:test 200
+[debug] [2024-03-28T09:23:27.312Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/gaannusa:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2024-03-28T09:23:27.321Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gaannusa/versions [none]
+[debug] [2024-03-28T09:23:27.321Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gaannusa/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-03-28T09:23:28.130Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gaannusa/versions 200
+[debug] [2024-03-28T09:23:28.130Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/gaannusa/versions {"name":"projects/489251140923/sites/gaannusa/versions/81e802b39ce68142","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  firestore: deploying indexes... 
+[debug] [2024-03-28T09:23:28.135Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/gaannusa/releases pageSize=10&pageToken=
+[debug] [2024-03-28T09:23:28.137Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/gaannusa/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-03-28T09:23:28.337Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/gaannusa/releases 200
+[debug] [2024-03-28T09:23:28.337Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/gaannusa/releases {"releases":[{"name":"projects/gaannusa/releases/cloud.firestore","rulesetName":"projects/gaannusa/rulesets/057095cf-6a17-4fdf-81eb-d09537797898","createTime":"2024-03-28T08:49:33.786518Z","updateTime":"2024-03-28T08:49:33.786518Z"}]}
+[debug] [2024-03-28T09:23:28.338Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets/057095cf-6a17-4fdf-81eb-d09537797898 [none]
+[debug] [2024-03-28T09:23:28.457Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets/057095cf-6a17-4fdf-81eb-d09537797898 200
+[debug] [2024-03-28T09:23:28.457Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets/057095cf-6a17-4fdf-81eb-d09537797898 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2024-03-28T09:23:28.460Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets [none]
+[debug] [2024-03-28T09:23:28.460Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets [omitted]
+[debug] [2024-03-28T09:23:28.744Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets 200
+[debug] [2024-03-28T09:23:28.744Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/gaannusa/rulesets {"name":"projects/gaannusa/rulesets/6d7636c9-cdcc-4c6d-8847-87eab487876d","source":{"files":[{"content":"rules_version = '2';\n\nservice cloud.firestore {\n  match /databases/{database}/documents {\n\n    // This rule allows anyone with your Firestore database reference to view, edit,\n    // and delete all data in your Firestore database. It is useful for getting\n    // started, but it is configured to expire after 30 days because it\n    // leaves your app open to attackers. At that time, all client\n    // requests to your Firestore database will be denied.\n    //\n    // Make sure to write security rules for your app before that time, or else\n    // all client requests to your Firestore database will be denied until you Update\n    // your rules\n    match /{document=**} {\n      allow read, write: if request.time < timestamp.date(2023, 12, 29);\n    }\n  }\n}","name":"firestore.rules"}]},"createTime":"2024-03-28T09:23:26.263055Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2024-03-28T09:23:28.744Z] [rules] created ruleset projects/gaannusa/rulesets/6d7636c9-cdcc-4c6d-8847-87eab487876d
+[debug] [2024-03-28T09:23:28.824Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/gaannusa/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-03-28T09:23:28.824Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/gaannusa/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-03-28T09:23:28.825Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/gaannusa/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-03-28T09:23:28.957Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/gaannusa/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-03-28T09:23:28.957Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/gaannusa/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/gaannusa/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully for (default) database 
+[info] i  hosting[gaannusa]: beginning deploy... 
+[debug] [2024-03-28T09:26:49.333Z] Error: EPERM: operation not permitted, scandir 'C:\Users\gabyl\AppData\Local\Archivos temporales de Internet'
+    at Object.readdirSync (node:fs:1515:26)
+    at GlobSync._readdir (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:288:46)
+    at GlobSync._readdirInGlobStar (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:245:17)
+    at GlobSync._readdir (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:276:17)
+    at GlobSync._processReaddir (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:137:22)
+    at GlobSync._process (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:132:10)
+    at GlobSync._processGlobStar (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:380:10)
+    at GlobSync._process (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:383:10)
+    at GlobSync._process (C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-28T09:29:38.882Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T09:29:38.886Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gabyl\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-03-28T09:29:38.887Z] CLI Version:   13.6.0
+[debug] [2024-03-28T09:29:38.887Z] Platform:      win32
+[debug] [2024-03-28T09:29:38.887Z] Node Version:  v20.11.0
+[debug] [2024-03-28T09:29:38.888Z] Time:          Thu Mar 28 2024 03:29:38 GMT-0600 (hora estándar central)
+[debug] [2024-03-28T09:29:38.888Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T09:29:39.022Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T09:29:39.024Z] > authorizing via signed-in user (gaan1920@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\gabyl
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
